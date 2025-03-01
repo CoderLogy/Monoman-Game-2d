@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://ce8gf3hjxgcsx"]
+
+[ext_resource type="Texture2D" uid="uid://coxemc3p4lq5q" path="res://dyingBlack/New_Piskel-5.png.png" id="1_viuu6"]
+[ext_resource type="Texture2D" uid="uid://bqw162wj4mk6x" path="res://runningBlack/New_Piskel-1.png_2.png" id="2_x8fhh"]
+[ext_resource type="Texture2D" uid="uid://cgtpmmc1agmsx" path="res://runningBlack/New_Piskel-2.png_2.png" id="3_nq0qe"]
+[ext_resource type="Texture2D" uid="uid://colsfsd0v87g5" path="res://runningBlack/New_Piskel-3.png_2.png" id="4_onw6u"]
+[ext_resource type="Texture2D" uid="uid://rvbcxof8ahxt" path="res://runningBlack/New_Piskel-4.png_2.png" id="5_nai0d"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dqv3m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_viuu6")
+}],
+"loop": true,
+"name": &"dyingBlack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_x8fhh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_nq0qe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_onw6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nai0d")
+}],
+"loop": true,
+"name": &"runningBlack",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iwuxm"]
+size = Vector2(188, 286)
+
+[node name="BlackCharacter" type="CharacterBody2D"]
+position = Vector2(519, 271)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3.25, -12.5)
+scale = Vector2(29, 29)
+sprite_frames = SubResource("SpriteFrames_dqv3m")
+animation = &"runningBlack"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-13, 20)
+shape = SubResource("RectangleShape2D_iwuxm")
